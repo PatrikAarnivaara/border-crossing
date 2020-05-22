@@ -2,9 +2,12 @@ from bokeh.plotting import figure
 from bokeh.io import output_file, show
 import pandas as pd
 
+# reads file into variable data
 data = pd.read_excel('data/crossings_per_year.xlsx')
 
-# add comment here, create class?
+# TODO add a title to the diagram, add a class
+
+# x-axis plots year, y-axis plots sum of people per year
 x = data["year"]
 y = data["people_crossing_by_year"]
 
