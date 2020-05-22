@@ -9,8 +9,8 @@ Graph of border crossings between US and Mexico between 2011-2019
 Coming up.
 
 ## Technologies
-Python
-Bokeh
+* Python
+* Bokeh
 
 ## Setup
 To be added later.
