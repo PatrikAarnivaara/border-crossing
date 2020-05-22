@@ -4,6 +4,7 @@ import pandas as pd
 
 data = pd.read_excel('data/crossings_per_year.xlsx')
 
+# add comment here, create class?
 x = data["year"]
 y = data["people_crossing_by_year"]
 
