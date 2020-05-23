@@ -1,22 +1,7 @@
-from bokeh.plotting import figure
-from bokeh.io import output_file, show
-import pandas as pd
+from ploter import *
 
-data = pd.read_excel('data/crossings_per_year.xlsx')
+# reads file into variable data
+data_year = Plot('data/crossings_per_year.xlsx')
 
-x = data["year"]
-y = data["people_crossing_by_year"]
-
-# prepare the output file
-output_file("line_from_excel.html")
-
-# create a figure object
-f = figure()
-
-# create a line plot
-f.line(x, y)
-
-# write the graph in the figure object
-show(f)
-
-# print(data)
+# x-axis plots year, y-axis plots sum of people per year
+data_year.axis("year", "people_crossing_by_year")
