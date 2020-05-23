@@ -1,7 +1,7 @@
 from ploter import *
 
-# reads file into variable data
+# reads excel-file into variable data
 data_year = Plot('data/crossings_per_year.xlsx')
 
-# x-axis plots year, y-axis plots sum of people per year
+# insert x-axis and y-axis to plot graph
 data_year.axis("year", "people_crossing_by_year")
