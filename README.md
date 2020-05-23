@@ -1,16 +1,17 @@
 # Border Crossing - Bokeh graph
 
-Graph of border crossings
+Graph of border crossings, in development...
 
 ## General info
 Graph of border crossings between US and Mexico between 2011-2019 
 
 ## Screenshots
-Coming up.
+![](plot.png)
 
 ## Technologies
 * Python
-* Bokeh
+* Bokeh library
+* Pandas library
 
 ## Setup
 To be added later.
