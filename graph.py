@@ -3,7 +3,7 @@ from bokeh.plotting import figure
 from bokeh.io import output_file, show
 
 
-class Linear:
+class Graph:
 
     def __init__(self, filepath):
         self.filepath = filepath
