@@ -1,6 +1,9 @@
+import pandas as pd
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
-import pandas as pd
+from IPython.display import IFrame
+
+IFrame('https://demo.bokeh.org/sliders', width=900, height=500)
 
 
 class Plot:
