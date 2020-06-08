@@ -11,10 +11,9 @@ data_year.linear_axis("year", "people_crossing_by_year")
 data_month = Polynomial('data/crossing_remittance_by_month.xlsx')
 
 # insert polynomial degree
-data_month.polynomial_axis(18)
+data_month.polynomial_axis()
 
 
 # TODO:
-# test different excel-files
 # try catch error handling
-# add input so user can choose file and x and y axis
+# add input so user can choose polynomial degree

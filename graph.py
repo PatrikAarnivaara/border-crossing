@@ -1,6 +1,7 @@
 import pandas as pd
 from bokeh.plotting import figure
 from bokeh.io import output_file, show
+from bokeh.layouts import column
 
 
 class Graph:
@@ -19,10 +20,12 @@ class Graph:
         # random value in range
 
         # create a figure object
-        f = figure()
+        f1 = figure()
+        f2 = figure()
 
         # create a line plot
-        f.line(x, y)
+        f1.line(x, y)
+        f2.line(x, y)
 
         # write the graph in the figure object
-        show(f)
+        show(column(f1, f2))
