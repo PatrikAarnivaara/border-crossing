@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from bokeh.io import output_file, show
 from bokeh.models import Range1d, LinearAxis
 from bokeh.plotting import figure
@@ -11,9 +12,13 @@ class Graph:
         self.data = pd.read_excel(filepath)
 
     def linear_axis(self, x, y, y2):
-        x = self.data[x]
+        X = self.data[x]
         y = self.data[y]
         y2 = self.data[y2]
+
+        # random number in between -1 and 1
+        # y3 = np.random.uniform(low=-1, high=1, size=1)
+        # y_random = y * y3
 
         # prepare the output file
         output_file("legend_labels.html")
@@ -24,8 +29,9 @@ class Graph:
         f.add_layout(LinearAxis(y_range_name="y2", axis_label="Money"), 'right')
 
         # create a line plot
-        f.line(x, y, legend_label="people", color="red")
-        f.line(x, y2, legend_label="money", color="green", y_range_name="y2")
+        f.line(X, y, legend_label="people", color="red")
+        # f.line(X, y_random, legend_label="random", color="pink")
+        f.line(X, y2, legend_label="money", color="green", y_range_name="y2")
         f.xaxis.axis_label = "Year"
         f.legend.location = "bottom_right"
 
