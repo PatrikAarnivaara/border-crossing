@@ -14,7 +14,7 @@ Graph of border crossings between US and Mexico between 2011-2019
 * Pandas library
 
 ## Setup
-To be added later.
+Clone and run in IntelliJ
 
 ## Features
 Ready:
