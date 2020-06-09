@@ -10,18 +10,16 @@ Graph of border crossings between US and Mexico between 2011-2019
 
 ## Technologies
 * Python
-* Bokeh library
-* Pandas library
+* Bokeh
+* Pandas
+* Matplotlib
 
 ## Setup
 Clone and run in IDE
 
 ## Features
-Ready:
-* Coming up.
-
-To-do list:
-* Find more data
+* Bokeh line graph from excel-file
+* Matplotlib polynomial regression plot with train and test set 
 
 ## Status
 Project is: _in progress_
