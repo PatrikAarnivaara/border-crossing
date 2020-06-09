@@ -1,7 +1,7 @@
 import pandas as pd
-from bokeh.plotting import figure
 from bokeh.io import output_file, show
-from bokeh.layouts import column
+from bokeh.models import Range1d, LinearAxis
+from bokeh.plotting import figure
 
 
 class Graph:
@@ -10,22 +10,24 @@ class Graph:
         self.filepath = filepath
         self.data = pd.read_excel(filepath)
 
-    def linear_axis(self, x, y):
+    def linear_axis(self, x, y, y2):
         x = self.data[x]
         y = self.data[y]
+        y2 = self.data[y2]
 
         # prepare the output file
-        output_file("line_from_excel.html")
-
-        # random value in range
+        output_file("legend_labels.html")
 
         # create a figure object
-        f1 = figure()
-        f2 = figure()
+        f = figure(title='Border Crossings - People and Money', y_range=(300000000, 380000000))
+        f.extra_y_ranges = {"y2": Range1d(start=20000000000, end=40000000000)}
+        f.add_layout(LinearAxis(y_range_name="y2", axis_label="Money"), 'right')
 
         # create a line plot
-        f1.line(x, y)
-        f2.line(x, y)
+        f.line(x, y, legend_label="people", color="red")
+        f.line(x, y2, legend_label="money", color="green", y_range_name="y2")
+        f.xaxis.axis_label = "Year"
+        f.legend.location = "bottom_right"
 
         # write the graph in the figure object
-        show(column(f1, f2))
+        show(f)
