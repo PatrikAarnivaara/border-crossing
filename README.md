@@ -1,6 +1,6 @@
-# Border Crossing - Bokeh graph
+# Border Crossings
 
-Graph of border crossings and money remittance
+Graph of border crossings and money transfers.
 
 ## General info
 Graph of border crossings between US and Mexico between 2011-2019. People crossing border to US from Mexico and money remittance from US to Mexico. Datasets(add sources...)  
