@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from bokeh.io import output_file, show
 from bokeh.models import Range1d, LinearAxis
 from bokeh.plotting import figure
