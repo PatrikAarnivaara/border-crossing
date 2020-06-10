@@ -1,27 +1,25 @@
-# Border Crossing - Bokeh graph
+# Border Crossings
 
-Graph of border crossings, in development...
+Graph of border crossings and money transfers.
 
 ## General info
-Graph of border crossings between US and Mexico between 2011-2019 
+Graph of border crossings between US and Mexico between 2011-2019. People crossing border to US from Mexico and money remittance from US to Mexico. Datasets(add sources...)  
 
 ## Screenshots
 ![](screenshot.png)
 
 ## Technologies
 * Python
-* Bokeh library
-* Pandas library
+* Bokeh
+* Pandas
+* Matplotlib
 
 ## Setup
-To be added later.
+Clone and run in IDE
 
 ## Features
-Ready:
-* Coming up.
-
-To-do list:
-* Find more data
+* Bokeh line graph from excel-file
+* Matplotlib polynomial regression plot with train and test set 
 
 ## Status
 Project is: _in progress_
