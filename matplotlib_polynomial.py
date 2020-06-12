@@ -21,6 +21,26 @@ class Polynomial:
         train_test_visualize(x, y)
 
 
+def dice():
+    # Random numbers in between 1 and 6.
+    dice_six_sided = np.random.randint(1, 7, (9, 1))
+
+    # Convert random numbers to six numbers in between -1 and 1
+    # for y in dice_six_sided:
+    if dice_six_sided == 1:
+        return -1
+    elif dice_six_sided == 2:
+        return -0.6
+    elif dice_six_sided == 3:
+        return -0.2
+    elif dice_six_sided == 4:
+        return 0.2
+    elif dice_six_sided == 5:
+        return 0.6
+    elif dice_six_sided == 6:
+        return 1
+
+
 def train_test_visualize(x, y):
     # Random numbers in between -1 and 1.
     random_number = np.random.uniform(low=-1, high=1, size=len(y))
@@ -44,20 +64,21 @@ def train_test_visualize(x, y):
     # Evaluate the R2-value of model.
     print(r2_score(y_test, y_pred))
 
-    # Extra random generator based on a six-sided dice.
-    # Refactor, 1 betyder - 1.0, 2 betyder -0.6, 3 betyder -0.2, 4 betyder +0.2, 5 betyder +0.6, 6 betyder +1
-    # Implement roulette wheel one million times statistic on spread of numbers, how?
     # Standard_deviation = y_reg.std()
 
-    # Creates a new array with random numbers.
+    # regressor to new variable.
     y_reg = regressor.predict(poly_reg.fit_transform(x))
+
+    # Creates a new array with random numbers.
     y_error = random_number * const_number
     y_deviation = y_reg + random_number * const_number
+    y_dice = y_reg + dice() * const_number
 
     # Print arrays and random number.
     print(y)
     print(y_reg)
     print(random_number)
+    print(y_dice)
     # plt.suptitle('R2: ' + str(r2_score(y_test, y_pred))) 
 
     # Visualizing results of the polynomial regression with subplots.
@@ -80,7 +101,7 @@ def train_test_visualize(x, y):
     plt.plot(x, y_deviation, color='purple')
     plt.xlabel('Year')
 
-    # Data set with errorbars random deviation (0 - 10000000)
+    # Data set with error bars random deviation (0 - 10000000)
     plt.subplot(234)
     plt.plot(x, y, color='red')
     plt.errorbar(x, y, yerr=y_error, fmt='o', ecolor="black", capsize=3, alpha=0.5)
@@ -89,13 +110,12 @@ def train_test_visualize(x, y):
     # Data set with random deviation by dice
     plt.subplot(235)
     plt.plot(x, y, color='red')
-    plt.errorbar(x, y, yerr=y_error, fmt='o', ecolor="black", capsize=3, alpha=0.5)
+    plt.plot(x, y_dice, color='yellow')
     plt.xlabel('Year')
 
     # Data set with
     plt.subplot(236)
     plt.plot(x, y, color='red')
-    plt.errorbar(x, y, yerr=y_error, fmt='o', ecolor="black", capsize=3, alpha=0.5)
     plt.xlabel('Year')
 
     # plt.ylabel('Money Remittance')
