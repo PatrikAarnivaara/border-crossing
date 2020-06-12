@@ -21,31 +21,40 @@ class Polynomial:
         train_test_visualize(x, y)
 
 
-def dice():
-    # Random numbers in between 1 and 6.
-    dice_six_sided = np.random.randint(1, 7, (9, 1))
+def dice(array_length):
+    # List to append to and array for converting to numpy.
+    dice_array = np.array
+    dice_list_array = []
+    
+    # Counter.
+    i = 0
 
     # Convert random numbers to six numbers in between -1 and 1
-    # for y in dice_six_sided:
-    if dice_six_sided == 1:
-        return -1
-    elif dice_six_sided == 2:
-        return -0.6
-    elif dice_six_sided == 3:
-        return -0.2
-    elif dice_six_sided == 4:
-        return 0.2
-    elif dice_six_sided == 5:
-        return 0.6
-    elif dice_six_sided == 6:
-        return 1
+    while i < array_length:
+        dice_six_sided = np.random.randint(1, 7)
+        if dice_six_sided == 1:
+            dice_list_array.append(-1)
+        elif dice_six_sided == 2:
+            dice_list_array.append(-0.6)
+        elif dice_six_sided == 3:
+            dice_list_array.append(-0.2)
+        elif dice_six_sided == 4:
+            dice_list_array.append(0.2)
+        elif dice_six_sided == 5:
+            dice_list_array.append(0.6)
+        else:
+            dice_list_array.append(1)
+        i = i + 1
+        dice_array = np.array(dice_list_array)
+
+    return dice_array
 
 
 def train_test_visualize(x, y):
     # Random numbers in between -1 and 1.
     random_number = np.random.uniform(low=-1, high=1, size=len(y))
 
-    # Constant
+    # Constant.
     const_number = 10000000
 
     # Split dataset into train and test set.
@@ -69,17 +78,13 @@ def train_test_visualize(x, y):
     # regressor to new variable.
     y_reg = regressor.predict(poly_reg.fit_transform(x))
 
-    # Creates a new array with random numbers.
+    # Creates a new array of y-values with random numbers.
     y_error = random_number * const_number
     y_deviation = y_reg + random_number * const_number
-    y_dice = y_reg + dice() * const_number
-
-    # Print arrays and random number.
-    print(y)
-    print(y_reg)
-    print(random_number)
-    print(y_dice)
-    # plt.suptitle('R2: ' + str(r2_score(y_test, y_pred))) 
+    y_dice_array = y_reg + dice(len(y)) * const_number
+    # y_dice = y_reg + y_dice_array
+    # print(y_dice_array)
+    # print(dice(len(y)))
 
     # Visualizing results of the polynomial regression with subplots.
     plt.suptitle('Border Crossings - People - Polynomial')
@@ -110,12 +115,7 @@ def train_test_visualize(x, y):
     # Data set with random deviation by dice
     plt.subplot(235)
     plt.plot(x, y, color='red')
-    plt.plot(x, y_dice, color='yellow')
-    plt.xlabel('Year')
-
-    # Data set with
-    plt.subplot(236)
-    plt.plot(x, y, color='red')
+    plt.plot(x, y_dice_array, color='yellow')
     plt.xlabel('Year')
 
     # plt.ylabel('Money Remittance')
