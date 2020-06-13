@@ -21,16 +21,16 @@ class Polynomial:
         train_test_visualize(x, y)
 
 
-def dice(array_length):
-    # List to append to and array for converting to numpy.
-    dice_array = np.array
+def dice(y_array_length):
+    # List for appending random numbers and numpy array for converting before returning array.
     dice_list_array = []
-    
+    dice_array = np.array
+
     # Counter.
     i = 0
 
     # Convert random numbers to six numbers in between -1 and 1
-    while i < array_length:
+    while i < y_array_length:
         dice_six_sided = np.random.randint(1, 7)
         if dice_six_sided == 1:
             dice_list_array.append(-1)
@@ -44,7 +44,7 @@ def dice(array_length):
             dice_list_array.append(0.6)
         else:
             dice_list_array.append(1)
-        i = i + 1
+        i += 1
         dice_array = np.array(dice_list_array)
 
     return dice_array
@@ -73,8 +73,6 @@ def train_test_visualize(x, y):
     # Evaluate the R2-value of model.
     print(r2_score(y_test, y_pred))
 
-    # Standard_deviation = y_reg.std()
-
     # regressor to new variable.
     y_reg = regressor.predict(poly_reg.fit_transform(x))
 
@@ -82,41 +80,39 @@ def train_test_visualize(x, y):
     y_error = random_number * const_number
     y_deviation = y_reg + random_number * const_number
     y_dice_array = y_reg + dice(len(y)) * const_number
-    # y_dice = y_reg + y_dice_array
-    # print(y_dice_array)
-    # print(dice(len(y)))
 
     # Visualizing results of the polynomial regression with subplots.
     plt.suptitle('Border Crossings - People - Polynomial')
 
-    # Dataset
+    # Dataset.
     plt.subplot(231)
     plt.plot(x, y, color='red')
     plt.xlabel('Year')
 
-    # Trained dataset regression
+    # Trained dataset regression.
     plt.subplot(232)
     plt.plot(x, y, color='red')
     plt.plot(x, y_reg, color='green')
     plt.xlabel('Year')
 
-    # Dataset with random deviation (0 - 10000000)
+    # Dataset with random deviation (0 - 10000000).
     plt.subplot(233)
     plt.plot(x, y, color='red')
     plt.plot(x, y_deviation, color='purple')
     plt.xlabel('Year')
 
-    # Data set with error bars random deviation (0 - 10000000)
+    # Data set with error bars random deviation (0 - 10000000).
     plt.subplot(234)
     plt.plot(x, y, color='red')
     plt.errorbar(x, y, yerr=y_error, fmt='o', ecolor="black", capsize=3, alpha=0.5)
     plt.xlabel('Year')
 
-    # Data set with random deviation by dice
+    # Data set with random deviation by dice.
     plt.subplot(235)
     plt.plot(x, y, color='red')
     plt.plot(x, y_dice_array, color='yellow')
     plt.xlabel('Year')
 
     # plt.ylabel('Money Remittance')
+    # Standard_deviation = y_reg.std()
     plt.show()
