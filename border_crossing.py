@@ -12,7 +12,6 @@ data_year.linear_axis("year", "people", "money")
 data_year_people = Polynomial('data/crossings_per_year_people.xlsx')
 data_year_money = Polynomial('data/crossings_per_year_money.xlsx')
 
-
 # Functions plotting data.
 # data_month.polynomial_axis()
 data_year_people.polynomial_axis("People", 10000000)
