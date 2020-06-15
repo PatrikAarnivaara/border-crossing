@@ -5,6 +5,10 @@ Line graph with Bokeh and polynomial regression model with Matplotlib and Excel 
 ## General info
 Graph of border crossings between US and Mexico between 2011-2019. People crossing border to US from Mexico and money remittance from US to Mexico. Datasets(add sources...)  
 
+## Data sources
+* KAGGLE https://www.kaggle.com/
+* Banco de México www.banxico.org.mx
+
 ## Screenshots
 ![](screenshot.png)
 ![](screenshot_two.png)
