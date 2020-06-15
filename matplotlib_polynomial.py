@@ -17,7 +17,7 @@ class Polynomial:
         x = self.dataset.iloc[:, :-1].values
         y = self.dataset.iloc[:, -1].values
 
-        # Function callback.
+        # Callback.
         train_test_visualize(x, y, title, const_number)
 
 
@@ -114,5 +114,5 @@ def train_test_visualize(x, y, title, const_number):
     plt.plot(x, y_dice_reg, color='yellow')
     plt.xlabel('Year')
 
-    # Plot.
+    # Plot graph.
     plt.show()
