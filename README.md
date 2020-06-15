@@ -21,7 +21,7 @@ Graph of border crossings between US and Mexico between 2011-2019. People crossi
 * Excel
 
 ## Setup
-Clone and run in IDE
+Clone and run in optional IDE
 
 ## Features
 * Bokeh line graph from excel-file
