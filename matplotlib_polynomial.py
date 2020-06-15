@@ -114,6 +114,5 @@ def train_test_visualize(x, y, title, const_number):
     plt.plot(x, y_dice_reg, color='yellow')
     plt.xlabel('Year')
 
-    # plt.ylabel('Money Remittance')
-    # Standard_deviation = y_reg.std()
+    # Plot.
     plt.show()
