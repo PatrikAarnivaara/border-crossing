@@ -20,7 +20,7 @@ class Graph:
 
         # Create a figure object.
         f = figure(title='Border Crossings - People and Money',
-                   y_range=(300000000, 380000000))
+                   y_range=(150000000, 200000000))
         f.xaxis.axis_label = "Year"
         f.yaxis.axis_label = "People"
         f.extra_y_ranges = {"y2": Range1d(start=20000000000, end=40000000000)}
