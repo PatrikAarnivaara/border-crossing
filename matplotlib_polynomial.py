@@ -71,7 +71,7 @@ def train_test_visualize(x, y, title, const_number):
     np.set_printoptions(precision=2)
 
     # Evaluate the R2-value of model.
-    print(r2_score(y_test, y_pred))
+    r_2_score = r2_score(y_test, y_pred)
 
     # regressor to new variable.
     y_reg = regressor.predict(poly_reg.fit_transform(x))
@@ -82,7 +82,8 @@ def train_test_visualize(x, y, title, const_number):
     y_dice_reg = y_reg + dice(len(y)) * const_number
 
     # Visualizing results of the polynomial regression with subplots.
-    plt.suptitle("Border Crossings - " + title + " - Polynomial")
+    plt.suptitle("Border Crossings - " + title + " - Polynomial, R2: " + str(r_2_score))
+    plt.title(r2_score(y_test, y_pred))
 
     # Dataset.
     plt.subplot(231)
