@@ -13,6 +13,7 @@ Graph of border crossings between US and Mexico between 2011-2019. People crossi
 * Bokeh
 * Pandas
 * Matplotlib
+* Excel
 
 ## Setup
 Clone and run in IDE
@@ -22,7 +23,7 @@ Clone and run in IDE
 * Matplotlib polynomial regression plot with train and test set 
 
 ## Status
-Project is: _in progress_
+Project is: _finished_
 
 ## Contact
 Created by Patrik Aarnivaara and Victor Goméz
