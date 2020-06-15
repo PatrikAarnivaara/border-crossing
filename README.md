@@ -1,12 +1,13 @@
 # Border Crossings
 
-Graph of border crossings and money transfers.
+Line graph with Bokeh and polynomial regression model with Matplotlib and Excel of border crossings and money transfers between Mexico and US.
 
 ## General info
 Graph of border crossings between US and Mexico between 2011-2019. People crossing border to US from Mexico and money remittance from US to Mexico. Datasets(add sources...)  
 
 ## Screenshots
 ![](screenshot.png)
+![](screenshot_two.png)
 
 ## Technologies
 * Python
