@@ -13,12 +13,12 @@ class Polynomial:
         self.filepath = filepath
         self.dataset = pd.read_excel(filepath)
 
-    def polynomial_axis(self):
+    def polynomial_axis(self, title, const_number):
         x = self.dataset.iloc[:, :-1].values
         y = self.dataset.iloc[:, -1].values
 
         # Function callback.
-        train_test_visualize(x, y)
+        train_test_visualize(x, y, title, const_number)
 
 
 def dice(y_array_length):
@@ -50,12 +50,12 @@ def dice(y_array_length):
     return dice_array
 
 
-def train_test_visualize(x, y):
+def train_test_visualize(x, y, title, const_number):
     # Random numbers in between -1 and 1.
     random_number = np.random.uniform(low=-1, high=1, size=len(y))
 
     # Constant.
-    const_number = 10000000
+    const_number = const_number
 
     # Split dataset into train and test set.
     X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.30, random_state=0)
@@ -79,10 +79,10 @@ def train_test_visualize(x, y):
     # Creates a new array of y-values with random numbers.
     y_error = random_number * const_number
     y_deviation = y_reg + random_number * const_number
-    y_dice_array = y_reg + dice(len(y)) * const_number
+    y_dice_reg = y_reg + dice(len(y)) * const_number
 
     # Visualizing results of the polynomial regression with subplots.
-    plt.suptitle('Border Crossings - People - Polynomial')
+    plt.suptitle("Border Crossings - " + title + " - Polynomial")
 
     # Dataset.
     plt.subplot(231)
@@ -110,7 +110,7 @@ def train_test_visualize(x, y):
     # Data set with random deviation by dice.
     plt.subplot(235)
     plt.plot(x, y, color='red')
-    plt.plot(x, y_dice_array, color='yellow')
+    plt.plot(x, y_dice_reg, color='yellow')
     plt.xlabel('Year')
 
     # plt.ylabel('Money Remittance')
