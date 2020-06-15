@@ -19,7 +19,7 @@ class Graph:
         output_file("legend_labels.html")
 
         # Create a figure object.
-        f = figure(title='Border Crossings - People and Money - Mexico to US',
+        f = figure(title='Border Crossings - People and Money',
                    y_range=(300000000, 380000000))
         f.xaxis.axis_label = "Year"
         f.yaxis.axis_label = "People"
