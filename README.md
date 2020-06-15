@@ -12,6 +12,7 @@ Graph of border crossings between US and Mexico between 2011-2019. People crossi
 ## Screenshots
 ![](screenshot.png)
 ![](screenshot_two.png)
+![](screenshot_three.png)
 
 ## Technologies
 * Python
